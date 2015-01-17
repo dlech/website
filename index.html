@@ -167,7 +167,7 @@ public SearchViewModel(ISearchService searchService = null) : ReactiveObject, IR
     // of "dead airtime", then automatically invoke the subscribe command.
     this.WhenAnyValue(x => x.SearchQuery)
         .Throttle(TimeSpan.FromSeconds(1), RxApp.MainThreadScheduler)
-        .InvokeCommand(this, x => x.SearchService);
+        .InvokeCommand(this, x => x.Search);
 }
 </pre>
 			</div>
